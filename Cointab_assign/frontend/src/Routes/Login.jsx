@@ -25,8 +25,12 @@ const Login = () => {
          
           else {
             setErrorMessage("");
-            localStorage.setItem('token', response.data.token);
-            // console.log("user" , response.data)
+            const userData={
+              email: response.data.email,
+              token: response.data.token
+            }
+            localStorage.setItem("userData", JSON.stringify(userData));
+            console.log("user" , response.data)
             alert("User Login successful")
             navigate("/")
             
@@ -36,7 +40,7 @@ const Login = () => {
           if(err.response.status===401)
         {
             // console.log("error", err.response.status)
-            return setErrorMessage(err.response.data)
+            return setErrorMessage("Invalid email or password")
         }
         else if(err.response.status===404)
         {
@@ -56,6 +60,7 @@ const Login = () => {
     <div className="flex justify-center  ">
     <form  onSubmit={handleSubmit} className="w-full md:w-1/2 lg:w-1/3 px-4 py-6 bg-white rounded-lg shadow-backgroundShadow mt-8">
       <h2 className="text-2xl font-bold mb-4 bg-white">Login</h2>
+      <hr/>
       {errorMessage && (
           <div className="mb-4 p-2 bg-red-200 font-semibold text-red-700 rounded">{errorMessage}</div>
         )}

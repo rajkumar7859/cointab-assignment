@@ -47,6 +47,7 @@ const Register = () => {
     <div className="flex justify-center ">
     <form  onSubmit={handleSubmit} className="w-full md:w-1/2 lg:w-1/3 px-4 py-6 bg-white rounded-lg shadow-backgroundShadow mt-8">
       <h2 className="text-2xl font-bold mb-4 bg-white">Register</h2>
+      <hr />
       {errorMessage && (
           <div className="mb-4 p-2 bg-red-200 font-semibold text-red-700 rounded">{errorMessage}</div>
         )}
