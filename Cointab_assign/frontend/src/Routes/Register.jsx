@@ -38,7 +38,7 @@ const Register = () => {
           if(err.response.status===409)
         {
           setIsLoading(false)
-            return setErrorMessage(err.response.data)
+            return setErrorMessage("User is already register")
         }
           else
           {

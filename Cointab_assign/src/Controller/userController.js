@@ -59,13 +59,3 @@ exports.LoginUser = async (req, res) => {
     res.status(500).json({ message: 'Login error' });
   }
 };
-
-exports.LogoutUser = async (req, res) => {
-  try {
-    // Send empty token in response to logout user
-    res.status(200).json({ token: "" });
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ message: "Logout error" });
-  }
-};

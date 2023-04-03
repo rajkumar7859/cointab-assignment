@@ -5,6 +5,5 @@ const blockUserMiddleware = require("../Meddleware/loginMeddleware")
 
 router.post("/login", blockUserMiddleware, LoginUser);
 router.post("/register", registerUser);
-router.post("/logout", LogoutUser);
 
 module.exports = router;
