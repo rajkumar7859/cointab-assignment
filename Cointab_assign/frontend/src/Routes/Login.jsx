@@ -13,7 +13,7 @@ const Login = () => {
         event.preventDefault();
     
         try {
-          const response = await axios.post("https://cointab-assignment-neon.vercel.app/user/login", {
+          const response = await axios.post("https://cointab-assignment-86sr5p281-rajkumar7859.vercel.app/user/login", {
             email,
             password,
           });

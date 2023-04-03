@@ -14,7 +14,7 @@ const Register = () => {
         event.preventDefault();
     
         try {
-          const response = await axios.post("https://cointab-assignment-neon.vercel.app/user/register", {
+          const response = await axios.post("https://cointab-assignment-86sr5p281-rajkumar7859.vercel.app/user/register", {
             name,
             email,
             password,
