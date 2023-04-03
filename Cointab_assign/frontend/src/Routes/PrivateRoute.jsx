@@ -9,5 +9,4 @@ const PrivateRoute = ({children}) => {
     isAuthenticated ? children : <Navigate to="/register" />
   );
 };
-
 export default PrivateRoute;
