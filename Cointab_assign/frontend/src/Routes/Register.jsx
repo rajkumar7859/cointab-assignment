@@ -45,7 +45,7 @@ const Register = () => {
 
   return (
     <div className="flex justify-center ">
-    <form  onSubmit={handleSubmit} className="w-full md:w-1/2 lg:w-1/3 px-4 py-6 bg-white rounded-lg shadow-backgroundShadow mt-8">
+    <form  onSubmit={handleSubmit} className="w-full md:w-1/2 lg:w-1/3 px-4 py-6 bg-white rounded-lg shadow shadow-xl mt-8">
       <h2 className="text-2xl font-bold mb-4 bg-white">Register</h2>
       <hr />
       {errorMessage && (
@@ -91,7 +91,7 @@ const Register = () => {
         />
       </div>
       <button
-        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded shadow-buttonShadow focus:outline-none focus:shadow-outline"
+        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded shadow shadow-xl focus:outline-none focus:shadow-outline"
         type="submit"
       >
         Register
