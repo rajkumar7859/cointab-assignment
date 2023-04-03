@@ -40,15 +40,18 @@ const Login = () => {
     } catch (err) {
       console.error(err);
       if (err.response.status === 401) {
-        // console.log("error", err.response.status)
+   setIsLoading(false)
         return setErrorMessage("Invalid email or password");
       } else if (err.response.status === 404) {
+        setIsLoading(false)
         setErrorMessage("User not found. Please create account");
       } else if (err.response.status === 403) {
+        setIsLoading(false)
         setErrorMessage(
           `To many invalid attempt. Place try again after 24 hours`
         );
       } else {
+        setIsLoading(false)
         setErrorMessage("Something went wrong. Please try again.");
       }
     }

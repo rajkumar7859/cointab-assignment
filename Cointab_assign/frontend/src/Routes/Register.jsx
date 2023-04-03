@@ -37,10 +37,13 @@ const Register = () => {
           console.error(err);
           if(err.response.status===409)
         {
+          setIsLoading(false)
             return setErrorMessage(err.response.data)
         }
           else
-          {setErrorMessage("Something went wrong. Please try again.");}
+          {
+            setIsLoading(false)
+            setErrorMessage("Something went wrong. Please try again.");}
         }
       };
 
