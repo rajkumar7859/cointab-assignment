@@ -6,6 +6,7 @@ const Login = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [errorMessage, setErrorMessage] = useState("");
+    const [isLoading , setIsLoading] =useState(false)
     const navigate=useNavigate()
 
 
@@ -13,6 +14,7 @@ const Login = () => {
         event.preventDefault();
     
         try {
+          setIsLoading(true)
           const response = await axios.post("https://cointab-assignment-86sr5p281-rajkumar7859.vercel.app/user/login", {
             email,
             password,
@@ -31,6 +33,7 @@ const Login = () => {
             }
             localStorage.setItem("userData", JSON.stringify(userData));
             console.log("user" , response.data)
+            setIsLoading(false)
             alert("User Login successful")
             navigate("/")
             
@@ -94,7 +97,7 @@ const Login = () => {
         className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded shadow shadow-xl focus:outline-none focus:shadow-outline"
         type="submit"
       >
-      Login
+      {isLoading?"Loading....":"Login"} 
       </button>
     </form>
   </div>
